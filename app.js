@@ -3,13 +3,19 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var adminRouter = require('./routes/admin');
 
 var app = express();
-
+app.use(session({
+  secret : "nihao", //加密session，随便写
+  cookie : {maxAge : 60*1000*30}, //设置过期时间 --- 半小时
+  resave : true, //强制保存session 默认为 true，建议设置成false
+  saveUninitialized : false ////强制将未初始化的session存储 默认为true，建议设置成true
+}));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

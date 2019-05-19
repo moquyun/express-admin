@@ -1,0 +1,27 @@
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper"><a href="#" class="left-sidebar-toggle"><% if(menu.title){ %><%- menu.title %><% } %></a>
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll">
+                <div class="left-sidebar-content">
+                    <ul class="sidebar-elements">
+                        <li class="divider"><% if(menu.title){ %><%- menu.title %><% } %></li>
+                        <% if(menu.menu){ %>
+                            <% for(let i=0;i<menu.menu.length;i++){ %>
+                        <li class="parent"><a href="<%- menu.menu[i].href ? menu.menu[i].href : '#' %>"><i class="<%- menu.menu[i].ico %>"></i><span><%- menu.menu[i].title %></span></a>
+                            <% if(menu.menu[i].childMenu){ %>
+                                <ul class="sub-menu">
+                                    <% for(let k=0;k<menu.menu[i].childMenu.length;k++){ %>
+                                    <li><a href="<%- menu.menu[i].childMenu[k].href ? menu.menu[i].childMenu[k].href : '#' %>"><%- menu.menu[i].childMenu[k].title %></a>
+                                    </li>
+                                    <% } %>
+                                </ul>
+                            <% } %>
+                        </li>
+                            <% } %>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
