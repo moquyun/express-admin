@@ -1,0 +1,7 @@
+# Created by .ignore support plugin (hsz.mobi)
+### node template
+# PP ignored
+.idea
+**/node_modules/
+.git
+node_modules/
