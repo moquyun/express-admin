@@ -3,7 +3,7 @@
 * git clone 
 
 ```
-https://github.com/moquyun/express-admin.git
+git clone https://github.com/moquyun/express-admin.git
 ```
 
 * cd express-admin
@@ -15,6 +15,17 @@ cd express-admin
 ```javascript
 npm i
 ```
+
+* npm www-init 网站初始化
+
+```javascript
+npm www-init
+```
+
+
+
+
+> over 
 
 * run app
 
